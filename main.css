@@ -46,14 +46,15 @@ body {
 
 #wave-container {
   position: absolute;
-  top: 0;
+  bottom: 0;
   justify-content: center;
   z-index: -1;
   width: 100%;
   overflow-x: hidden;
+  background-color: #292929;
 }
 .wave-main {
-  width: 120%;
+  width: 100%;
 }
 
 .wave-main > path {
