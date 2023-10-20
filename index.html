@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <title>Harisa Ginting</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon_io/favicon-16x16.png">
+
+
     <link rel="stylesheet" href="./main.css">
     <script src="./lib/jquery.min.js"></script>
     <script src='./lib/anime.js'></script>
+    <script type="module" src="./lib/md-block.js"></script>
     <script>
         const global = $(document);
         const host = window.location.protocol + "//" + window.location.host;
@@ -20,7 +26,7 @@
             <svg class="wave-main" width="100" viewBox="0 0 1200 250">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M0 108.306L50 114.323C100 120.34 200 132.374 300 168.476C400 204.578 500 264.749 600 246.698C700 228.647 800 132.374 900 108.306C1000 84.2382 1100 132.374 1150 156.442L1200 180.51V-8.5451e-06H1150C1100 -8.5451e-06 1000 -8.5451e-06 900 -8.5451e-06C800 -8.5451e-06 700 -8.5451e-06 600 -8.5451e-06C500 -8.5451e-06 400 -8.5451e-06 300 -8.5451e-06C200 -8.5451e-06 100 -8.5451e-06 50 -8.5451e-06H0V108.306Z"
-                    fill="#b9b9b9" />
+                    fill="#efefef" />
             </svg>
         </div>
         <div id="container-profile">
@@ -80,22 +86,70 @@
         <div class="row center">
             <div class="col-75">
                 <div class="w-100 center">
-                    <div class="personal none">Personal Information</div>
-                    <div class="mac-window active">
+                    <button type="button" id="b-introduction" class="btn-pop-window none">Introduction</button>
+                    <div id="w-introduction" class="mac-window active">
                         <div class="title-bar">
                             <div class="buttons">
-                                <div class="close"></div>
-                                <div class="minimize"></div>
-                                <div class="maximize"></div>
+                                <div id="b-introduction-close" class="close"></div>
+                                <div id="b-introduction-minimize" class="minimize"></div>
+                                <div id="b-introduction-maximize" class="maximize"></div>
                             </div>
                         </div>
-                        <div class="window">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et assumenda eaque repellat, aliquam fugit sed amet quo vel quibusdam, ipsum enim ea beatae ipsa asperiores totam laboriosam corporis laborum doloribus.
+                        <div id="w-introduction-body" class="window">
+                            <md-block src="./md/summary.md">
+                                `summary.md` was *not* found
+                            </md-block>
                         </div>
                     </div>
                 </div>
+
+                <!-- SECOND SECTION -->
+                <div class="wrapper-2 center mt-2">
+                    <!-- DIV 1 -->
+                    <div class="w-100 center">
+                        <button type="button" id="b-stats" class="btn-pop-window none">Stats</button>
+                        <div id="w-stats" class="mac-window active">
+                            <div class="title-bar">
+                                <div class="buttons">
+                                    <div id="b-stats-close" class="close"></div>
+                                    <div id="b-stats-minimize" class="minimize"></div>
+                                    <div id="b-stats-maximize" class="maximize"></div>
+                                </div>
+                            </div>
+                            <div id="w-stats-body" class="window">
+                                <md-block src="./md/stats.md">
+                                    `stats.md` was *not* found
+                                </md-block>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END DIV 1 -->
+
+                    <!-- DIV 2 -->
+                    <div class="w-100 center">
+                        <button type="button" id="b-experience" class="btn-pop-window none">Experience</button>
+                        <div id="w-experience" class="mac-window active">
+                            <div class="title-bar">
+                                <div class="buttons">
+                                    <div id="b-experience-close" class="close"></div>
+                                    <div id="b-experience-minimize" class="minimize"></div>
+                                    <div id="b-experience-maximize" class="maximize"></div>
+                                </div>
+                            </div>
+                            <div id="w-experience-body" class="window">
+                                <md-block src="./md/experience.md">
+                                    `experience.md` was *not* found
+                                </md-block>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END DIV 2 -->
+                </div>
+                <!-- END SECOND SECTION -->
             </div>
         </div>
+
+
     </div>
 </body>
 
@@ -106,25 +160,69 @@
 
         return {
             init: function () {
-                $('.personal').click(function () {
-                    $('.mac-window').addClass('active');
-                    $('.personal').addClass('none');
+                $('#b-introduction').click(function () {
+                    $('#w-introduction').addClass('active');
+                    $('#b-introduction').addClass('none');
                 });
-                $('.close').click(function () {
-                    $('.mac-window').removeClass('active');
-                    $('.mac-window').removeClass('maximize');
-                    $('.mac-window').removeClass('minimize');
-                    $('.personal').removeClass('none');
+                $('#b-introduction-close').click(function () {
+                    $('#w-introduction').removeClass('active');
+                    $('#w-introduction').removeClass('maximize');
+                    $('#w-introduction').removeClass('minimize');
+                    $('#b-introduction').removeClass('none');
                 });
-                $('.minimize').click(function () {
-                    $('.mac-window').toggleClass('minimize');
-                    $('.mac-window .window').toggleClass('minimize');
-                    $('.mac-window').removeClass('maximize');
+                $('#b-introduction-minimize').click(function () {
+                    $('#w-introduction').toggleClass('minimize');
+                    $('#w-introduction-body').toggleClass('minimize');
+                    $('#w-introduction').removeClass('maximize');
                 });
-                $('.maximize').click(function () {
-                    $('.mac-window').toggleClass('maximize');
-                    $('.mac-window').removeClass('minimize');
+                $('#b-introduction-maximize').click(function () {
+                    $('#w-introduction').toggleClass('maximize');
+                    $('#w-introduction').removeClass('minimize');
                 });
+
+
+                $('#b-stats').click(function () {
+                    $('#w-stats').addClass('active');
+                    $('#b-stats').addClass('none');
+                });
+                $('#b-stats-close').click(function () {
+                    $('#w-stats').removeClass('active');
+                    $('#w-stats').removeClass('maximize');
+                    $('#w-stats').removeClass('minimize');
+                    $('#b-stats').removeClass('none');
+                });
+                $('#b-stats-minimize').click(function () {
+                    $('#w-stats').toggleClass('minimize');
+                    $('#w-stats-body').toggleClass('minimize');
+                    $('#w-stats').removeClass('maximize');
+                });
+                $('#b-stats-maximize').click(function () {
+                    $('#w-stats').toggleClass('maximize');
+                    $('#w-stats').removeClass('minimize');
+                });
+
+
+                $('#b-experience').click(function () {
+                    $('#w-experience').addClass('active');
+                    $('#b-experience').addClass('none');
+                });
+                $('#b-experience-close').click(function () {
+                    $('#w-experience').removeClass('active');
+                    $('#w-experience').removeClass('maximize');
+                    $('#w-experience').removeClass('minimize');
+                    $('#b-experience').removeClass('none');
+                });
+                $('#b-experience-minimize').click(function () {
+                    $('#w-experience').toggleClass('minimize');
+                    $('#w-experience-body').toggleClass('minimize');
+                    $('#w-experience').removeClass('maximize');
+                });
+                $('#b-experience-maximize').click(function () {
+                    $('#w-experience').toggleClass('maximize');
+                    $('#w-experience').removeClass('minimize');
+                });
+
+
             }
         };
 
