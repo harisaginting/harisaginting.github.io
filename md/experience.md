@@ -1,6 +1,6 @@
 ### **Experience**
 
-#### PT. Teknologi Pamadya Analitika  
+#### PT. Teknologi Pamadya Analitika
 > March 2022 - present as *Senior Backend Engineer*
 > - Collaborate with product team to build insurance policy service
 > - Rebuild healthcare services to handle multiple insurance provider
@@ -12,7 +12,6 @@
 > - Do research recent technology
 > - Manage squad members team
 > - Maintenance & Monitoring Payment Aggregator
-
 >> **Awards :** win gold medal at Erajaya Achievement Awards 2021
 
 #### PT. Erajaya Swasembada Tbk
@@ -35,6 +34,6 @@
 > #### PT. SDK Indonesia
 >> October 2016 - April 2017 as *Developer [Project Base]*
 > #### PT. Toyota Auto Body - Tokai Extrusion
->> October 2012 - August 2013 as *Hr GeneralistOctober*
+>> October 2012 - August 2013 as *Hr Generalist*
 > #### PT. NOK Indonesia
 >> August 2011 - August 2012 as Operator Production
